@@ -1,0 +1,9 @@
+.useritem{
+
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    justify-content: space-between;
+
+}
