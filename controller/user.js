@@ -1,4 +1,20 @@
+
+const AWS = require("aws-sdk");
 const User = require("../model/User");
+
+
+require("dotenv").config();
+
+const awsConfig = {
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_kEY,
+  region: process.env.AWS_REGION,
+  apiVersion: process.env.AWS_API_VERSION,
+  correctClockSkew: true
+  
+};
+
+const SES = new AWS.SES(awsConfig);
 
 //to post user
 
@@ -22,6 +38,35 @@ exports.postuserdetails = async (req, res) => {
       email,
       age,
     });
+
+
+    const params = {
+      Source: process.env.EMAIL_FROM,
+      Destination: {
+        ToAddresses: [process.env.EMAIL_FROM],
+      },
+      ReplyToAddresses: [email],
+      Message: {
+        Body: {
+          Html: {
+            Charset: "UTF-8",
+            Data: `
+              <html>
+                <h1 style={{color:"red"}}>Message from Typescript App</h1>
+                <p>Visit the website</p>
+              </html>
+              `,
+          },
+        },
+        Subject: {
+          Charset: "UTF-8",
+          Data: "Welcome Your Name is: "+name,
+        },
+      },
+    };
+
+    const emailSent = SES.sendEmail(params).promise();
+    
 
     const userResult = await User.create(userinfo);
 
