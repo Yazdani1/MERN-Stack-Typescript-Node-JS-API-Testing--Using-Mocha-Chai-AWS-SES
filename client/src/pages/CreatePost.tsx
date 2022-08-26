@@ -16,7 +16,9 @@ const CreatePost = () => {
   const [error, setError] = useState(false);
 
 
-  const submitPost = async () => {
+  const submitPost = async (e:any) => {
+    e.preventDefault();
+
     try {
       const payload:CreateUserProps = { name:userName, email:userEmail, age:userAge };
       const res = await createUser(payload);
@@ -27,6 +29,7 @@ const CreatePost = () => {
         toast.success("User Created Successfully!", {
           position: toast.POSITION.TOP_RIGHT,
         });
+
       }
     } catch (error: any) {
       setError(error.response && error.response.data.error);
@@ -47,9 +50,7 @@ const CreatePost = () => {
         <div className="col-xl-12 col-lg-12">
           <CardLayout
             title="Create new post"
-            buttonText="Submit"
-            buttonColor="white"
-            submitPost={submitPost}
+          
           >
             {showError()}
             <div className="row">
@@ -86,6 +87,14 @@ const CreatePost = () => {
                         placeholder="Age..."
                       />
                     </div>
+
+                    <button
+                    type="submit"
+                    className="btn btn-success"
+                    onClick={(e) => submitPost(e)}
+                  >
+                    Create User
+                  </button>
                   </form>
                 </div>
               </div>

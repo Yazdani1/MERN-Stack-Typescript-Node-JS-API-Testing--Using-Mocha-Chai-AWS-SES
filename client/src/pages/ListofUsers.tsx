@@ -63,7 +63,7 @@ const ListofUsers = () => {
         <h1>{showError()}</h1>
 
         {userList.map((item, index) => (
-          <UserComponent {...item} deleteSingleUser={deleteSingleUser}/>
+          <UserComponent {...item} deleteSingleUser={deleteSingleUser} key={index}/>
         ))}
       </div>
       <ToastContainer autoClose={8000} />

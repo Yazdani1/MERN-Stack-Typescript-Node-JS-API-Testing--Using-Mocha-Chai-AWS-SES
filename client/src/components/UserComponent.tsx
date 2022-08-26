@@ -69,7 +69,6 @@ const UserComponent = ({
     </div>
   );
 
-  const ududud = () => {};
 
   useEffect(() => {
     getSingleUserInfo(_id);
@@ -94,7 +93,6 @@ const UserComponent = ({
           title="Create new post"
           buttonText="Submit"
           buttonColor="white"
-          submitPost={() => ududud()}
           closeButton={hideEditForm}
           closeButtonText="Close"
         >

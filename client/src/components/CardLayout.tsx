@@ -8,7 +8,6 @@ interface IPropsCardLayout {
   children?: ReactNode;
   buttonText?: string;
   buttonColor?: string;
-  submitPost: (e: any) => void;
   closeButton?: () => void;
   closeButtonText?: string;
 }
@@ -17,9 +16,7 @@ const CardLayout = ({
   children,
   title,
   cardHeight,
-  buttonText,
   buttonColor,
-  submitPost,
   closeButton,
   closeButtonText,
 }: IPropsCardLayout) => {
@@ -32,16 +29,7 @@ const CardLayout = ({
         className="form-group justify-content-center align-items-center"
         style={{ marginLeft: "40px" }}
       >
-        <button
-          type="submit"
-          name="btnSubmit"
-          style={{ color: buttonColor }}
-          className="btn btn-success"
-          value="Sign In"
-          onClick={(e) => submitPost(e)}
-        >
-          {buttonText}
-        </button>
+       
 
         {closeButton && (
           <button
