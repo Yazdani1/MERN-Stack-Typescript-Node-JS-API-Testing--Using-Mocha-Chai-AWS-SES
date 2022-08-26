@@ -4,12 +4,12 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "postinstall": "npm run build",
     "start": "node app.js",
     "server": "nodemon app.js",
     "test": "mocha 'test'",
     "single": "mocha",
     "build": "webpack",
+    "postinstall":"tsc",
     "dev": "concurrently \"npm run server\" \"npm start --prefix client\"",
     "test-report": "mocha 'test' --reporter mochawesome --require mochawesome/register",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
