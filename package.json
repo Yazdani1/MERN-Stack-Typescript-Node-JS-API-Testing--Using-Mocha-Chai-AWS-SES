@@ -8,7 +8,7 @@
     "server": "nodemon app.js",
     "test": "mocha 'test'",
     "single": "mocha",
-    "build":"webpack",
+    "build": "webpack",
     "dev": "concurrently \"npm run server\" \"npm start --prefix client\"",
     "test-report": "mocha 'test' --reporter mochawesome --require mochawesome/register",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
@@ -30,6 +30,9 @@
   "devDependencies": {
     "chai": "^4.3.6",
     "mocha": "^10.0.0"
+  },
+  "engines": {
+    "node": "14.17.5",
+    "npm": "4.6.1"
   }
- 
 }
