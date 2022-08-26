@@ -23,9 +23,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "tsc": "./node_modules/typescript/bin/tsc",
-    "postinstall": "npm run tsc"
+    "eject": "react-scripts eject"
+
   },
   "eslintConfig": {
     "extends": [
