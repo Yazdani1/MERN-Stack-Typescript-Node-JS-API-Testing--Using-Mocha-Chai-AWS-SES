@@ -6,10 +6,10 @@ const User = require("../model/User");
 require("dotenv").config();
 
 const awsConfig = {
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_kEY,
-  region: process.env.AWS_REGION,
-  apiVersion: process.env.AWS_API_VERSION,
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID_INFO,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_kEY_INFO,
+  region: process.env.AWS_REGION_INFO,
+  apiVersion: process.env.AWS_API_VERSION_INFO,
   correctClockSkew: true
   
 };
@@ -41,9 +41,9 @@ exports.postuserdetails = async (req, res) => {
 
 
     const params = {
-      Source: process.env.EMAIL_FROM,
+      Source: process.env.EMAIL_FROM_INFO,
       Destination: {
-        ToAddresses: [process.env.EMAIL_FROM],
+        ToAddresses: [process.env.EMAIL_FROM_INFO],
       },
       ReplyToAddresses: [email],
       Message: {
