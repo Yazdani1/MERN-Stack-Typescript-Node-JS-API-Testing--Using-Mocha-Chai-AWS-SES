@@ -75,7 +75,7 @@ const CreatePost = () => {
 
                     <div className="form-group">
                       <input
-                        type="number"
+                        type="text"
                         value={userAge}
                         onChange={(e) => setUserAge(e.target.value)}
                         className="form-control"
