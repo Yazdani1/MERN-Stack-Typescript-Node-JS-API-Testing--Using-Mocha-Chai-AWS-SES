@@ -1,6 +1,9 @@
 {
   "name": "mocha-chai-node-js-api-testing",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.17.5"
+  },
   "description": "",
   "main": "app.js",
   "scripts": {
