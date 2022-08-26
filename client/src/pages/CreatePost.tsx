@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-
 import CardLayout from "../components/CardLayout";
 import "../App.css";
 import ListofUsers from "./ListofUsers";
-import { createUser, getAlluserList, deleteUser } from "../API";
-import { API_URL } from "../config";
-import {CreateUserProps } from "../API";
+import { createUser, CreateUserProps } from "../API";
 
 const CreatePost = () => {
   const [userName, setUserName] = useState<string>("");
@@ -15,12 +11,15 @@ const CreatePost = () => {
   const [userAge, setUserAge] = useState<string>("");
   const [error, setError] = useState(false);
 
-
-  const submitPost = async (e:any) => {
+  const submitPost = async (e: any) => {
     e.preventDefault();
 
     try {
-      const payload:CreateUserProps = { name:userName, email:userEmail, age:userAge };
+      const payload: CreateUserProps = {
+        name: userName,
+        email: userEmail,
+        age: userAge,
+      };
       const res = await createUser(payload);
       if (res) {
         setUserName("");
@@ -29,7 +28,6 @@ const CreatePost = () => {
         toast.success("User Created Successfully!", {
           position: toast.POSITION.TOP_RIGHT,
         });
-
       }
     } catch (error: any) {
       setError(error.response && error.response.data.error);
@@ -48,10 +46,7 @@ const CreatePost = () => {
     <div className="container">
       <div className="row">
         <div className="col-xl-12 col-lg-12">
-          <CardLayout
-            title="Create new post"
-          
-          >
+          <CardLayout title="Create new post">
             {showError()}
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
@@ -89,12 +84,12 @@ const CreatePost = () => {
                     </div>
 
                     <button
-                    type="submit"
-                    className="btn btn-success"
-                    onClick={(e) => submitPost(e)}
-                  >
-                    Create User
-                  </button>
+                      type="submit"
+                      className="btn btn-success"
+                      onClick={(e) => submitPost(e)}
+                    >
+                      Create User
+                    </button>
                   </form>
                 </div>
               </div>

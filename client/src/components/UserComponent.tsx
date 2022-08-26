@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IPropsUser } from "../DataProvider";
 import { updateUserInfo, UpdateUserProps, getSingleUser } from "../API";
-import axios from "axios";
-import { API_URL } from "../config";
 import CardLayout from "../components/CardLayout";
 
 // {name,email,age,deleteSingleUser,_id}

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-import { UpdateUserInfo, CreateUserInfo } from "./DataProvider";
+import { CreateUserInfo } from "./DataProvider";
 
 ////////////////////////////////////////////////////////
 //////            User                         ////////
@@ -15,9 +15,9 @@ export interface CreateUserProps {
   age: string;
 }
 
-export const createUser = async ( props: CreateUserProps): Promise<CreateUserInfo> => {
+export const createUser = async ( props: CreateUserProps) => {
   const res = await axios.post("/api/postuser", { ...props });
-  return res.data;
+  return res;
 };
 
 // to get all user list
