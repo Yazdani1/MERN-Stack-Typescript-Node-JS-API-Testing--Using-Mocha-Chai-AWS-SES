@@ -11,7 +11,6 @@ interface IPropsCardLayout {
   closeButton?: () => void;
   closeButtonText?: string;
 }
-
 const CardLayout = ({
   children,
   title,
@@ -24,13 +23,11 @@ const CardLayout = ({
     <div className="card-layout-design" style={{ height: cardHeight }}>
       <h5>{title}</h5>
       {children}
-
       <div
         className="form-group justify-content-center align-items-center"
         style={{ marginLeft: "40px" }}
       >
-       
-
+      
         {closeButton && (
           <button
             type="submit"
