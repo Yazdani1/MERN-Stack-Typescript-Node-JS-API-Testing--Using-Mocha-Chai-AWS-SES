@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { API_URL } from "../config";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { API_URL } from "../config";
 import { getAlluserList, deleteUser } from "../API";
 import "./listuser.css";
 import UserComponent from "../components/UserComponent";

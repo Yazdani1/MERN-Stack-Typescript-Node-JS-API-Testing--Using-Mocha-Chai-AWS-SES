@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+
 import CardLayout from "../components/CardLayout";
 import "../App.css";
 import ListofUsers from "./ListofUsers";
 import { createUser, getAlluserList, deleteUser } from "../API";
-import axios from "axios";
 import { API_URL } from "../config";
 import {CreateUserProps } from "../API";
-import { ToastContainer, toast } from "react-toastify";
 
 const CreatePost = () => {
   const [userName, setUserName] = useState<string>("");
