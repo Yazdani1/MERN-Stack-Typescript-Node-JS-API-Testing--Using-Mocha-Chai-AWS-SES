@@ -45,6 +45,6 @@ if (process.env.NODE_ENV === "production") {
 
 
 
-app.listen(port, (req, res) => {
+app.listen(port,'0.0.0.0', (req, res) => {
   console.log("Server connected");
 });
