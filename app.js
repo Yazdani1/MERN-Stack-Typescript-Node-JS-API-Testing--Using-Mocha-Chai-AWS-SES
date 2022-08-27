@@ -34,6 +34,6 @@ app.use("/api",require("./router/user"));
 
 
 
-app.listen(port,'0.0.0.0', (req, res) => {
+app.listen(port, (req, res) => {
   console.log("Server connected");
 });
