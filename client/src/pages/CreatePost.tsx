@@ -30,17 +30,7 @@ const CreatePost = () => {
         });
       }
     } catch (error: any) {
-
-      console.log(error.response);
-
-      
-
-      if(error.response){
-        setError(error.response && error.response?.data?.error);
-        // setError(error.response && error.response.status);
-
-      }
-
+      setError(error.response && error.response.data.error);
     }
   };
 
